@@ -1,6 +1,6 @@
 package com.devpubba.tutorials.sprintboottutorials.repository;
 
-import com.devpubba.tutorials.sprintboottutorials.entities.User;
+import com.devpubba.tutorials.sprintboottutorials.entities.UserEntity;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -8,9 +8,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "users", path = "users")
-public interface UserRepository extends PagingAndSortingRepository<User, Long> {
+public interface UserRepository extends PagingAndSortingRepository<UserEntity, Long> {
 
-    List<User> findByName(@Param("name") String name);
+    List<UserEntity> findByName(@Param("name") String name);
 
-    User findById(long id);
+    UserEntity findById(long id);
 }
